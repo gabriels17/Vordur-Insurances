@@ -4,8 +4,9 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System.Net.Http;
 using backend;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Vordur.Functions
 {
@@ -20,6 +21,7 @@ namespace Vordur.Functions
 
             var insuranceService = new InsuranceService();
             var data = await insuranceService.GetAllInsurances();
+            var insurances = JsonConvert.DeserializeObject<List<Insurance>>(data);
             return new OkObjectResult(data);
 
             // TODO: Upload data to new blob
