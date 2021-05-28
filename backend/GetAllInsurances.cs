@@ -20,12 +20,11 @@ namespace Vordur.Functions
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             var insuranceService = new InsuranceService();
+            insuranceService.CreateBlobIfNotExisting();
             var data = await insuranceService.GetAllInsurances();
             var insurances = JsonConvert.DeserializeObject<List<Insurance>>(data);
             return new OkObjectResult(data);
 
-            // TODO: Upload data to new blob
-            // TODO: Publish function to Azure
             // TODO: Store secrets as env variables
         }
     }

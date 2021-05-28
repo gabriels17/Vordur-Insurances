@@ -14,12 +14,13 @@ namespace Vordur.Functions
     {
         [FunctionName("FilterInsurances")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             var insuranceService = new InsuranceService();
+            insuranceService.CreateBlobIfNotExisting();
             var data = await insuranceService.GetAllInsurances();
             string category = req.Query["category"];
             var insurances = JsonConvert.DeserializeObject<List<Insurance>>(data);
