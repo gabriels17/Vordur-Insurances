@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Vörður tryggingar</title>
         <meta name="Vörður tryggingar" content="tryggingar" />
@@ -22,6 +22,6 @@ export default function Home() {
         beatae.
       </p>
       <a className={styles.btn}>Press me!</a>
-    </div>
+    </>
   );
 }
