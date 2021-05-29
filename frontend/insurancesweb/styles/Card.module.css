@@ -1,0 +1,14 @@
+.card {
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: '#fff';
+  margin: 6px 4px;
+}
+
+.cardContent {
+  margin: 20px 18px;
+}
+
+.img {
+  border-radius: 30px;
+}
