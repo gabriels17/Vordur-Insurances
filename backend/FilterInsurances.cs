@@ -23,13 +23,17 @@ namespace Vordur.Functions
             insuranceService.CreateBlobIfNotExisting();
             var data = await insuranceService.GetAllInsurances();
             string category = req.Query["category"];
+            if (string.IsNullOrEmpty(category))
+            {
+                return await GetAllInsurances.Run(req, log);
+            }
             var insurances = JsonConvert.DeserializeObject<List<Insurance>>(data);
             var filteredInsurances = new List<Insurance>();
 
             // Filter logic
             foreach (var i in insurances)
             {
-                if (!string.IsNullOrEmpty(category) && i.Category.ToLower().Contains(category.ToLower()))
+                if (i.Category.ToLower().Contains(category.ToLower()))
                 {
                     filteredInsurances.Add(i);
                 }
