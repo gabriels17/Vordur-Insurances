@@ -1,18 +1,20 @@
 import Image from 'next/image';
 import styles from '../styles/Card.module.css';
 
-const Card = () => {
+const Card = ({ insurance }) => {
   return (
     <div className={styles.card}>
       <Image
         className={styles.img}
-        src="/barnatrygging.jpg"
+        src={'/' + insurance.image}
+        alt={insurance.type}
         width={640}
         height={279}
       ></Image>
       <div className={styles.cardContent}>
-        <h5>Heiti tryggingar</h5>
-        <p>Lýsing á tryggingu</p>
+        <button className={styles.btn}>{insurance.category}</button>
+        <h3>{insurance.type}</h3>
+        <p className={styles.cardText}>{insurance.description}</p>
       </div>
     </div>
   );

@@ -1,8 +1,13 @@
 .card {
   border: 1px solid black;
-  border-radius: 30px;
-  background-color: '#fff';
-  margin: 6px 4px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 20px 4px;
+}
+
+.cardText {
+  margin: 0;
+  line-height: 1.5;
 }
 
 .cardContent {
@@ -10,5 +15,16 @@
 }
 
 .img {
-  border-radius: 30px;
+  border-radius: 20px;
+}
+
+.btn {
+  background-color: rgb(252, 189, 0);
+  border: 0px;
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
 }

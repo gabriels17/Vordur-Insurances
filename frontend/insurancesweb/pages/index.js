@@ -1,7 +1,16 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Card from '../components/Card';
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const res = await fetch('http://localhost:7071/api/GetAllInsurances');
+  const data = await res.json();
+
+  return {
+    props: { insurances: data }
+  };
+};
+
+export default function Home({ insurances }) {
   return (
     <>
       <Head>
@@ -9,19 +18,13 @@ export default function Home() {
         <meta name="Vörður tryggingar" content="tryggingar" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p className={styles.text}>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-        minima quos, exercitationem maiores similique deserunt id ullam. Harum,
-        natus explicabo eius totam perferendis excepturi autem, iure deleniti
-        aliquid corporis quae.
-      </p>
-      <p className={styles.text}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam voluptas
-        velit hic reprehenderit dolorum ipsam molestias tempora minima
-        distinctio ad porro quas nisi, non quod voluptatem, tenetur soluta eaque
-        beatae.
-      </p>
-      <a className={styles.btn}>Press me!</a>
+      {insurances.map((insurance) => (
+        <Card insurance={insurance}>
+          <div key={insurance.type}>
+            <h3>{insurance.type}</h3>
+          </div>
+        </Card>
+      ))}
     </>
   );
 }
