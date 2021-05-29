@@ -12,7 +12,7 @@ const Card = ({ insurance }) => {
         height={279}
       ></Image>
       <div className={styles.cardContent}>
-        <button className={styles.btn}>{insurance.category}</button>
+        <button className="btn">{insurance.category}</button>
         <h3>{insurance.type}</h3>
         <p className={styles.cardText}>{insurance.description}</p>
       </div>

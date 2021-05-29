@@ -18,7 +18,7 @@ a {
 }
 
 nav {
-  margin: 0px auto 80px;
+  margin: 0px auto 20px;
   padding: 10px 0;
   display: flex;
   justify-content: flex-end;
@@ -38,4 +38,25 @@ nav .logo {
 .not-found a {
   color: #4979ff;
   text-decoration: underline;
+}
+
+.btn {
+  background-color: rgb(252, 189, 0);
+  border: 0px;
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+.buttonContainer {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categoryBtn {
+  margin: 10px;
 }

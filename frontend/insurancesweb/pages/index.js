@@ -10,7 +10,20 @@ export const getStaticProps = async () => {
   };
 };
 
+const removeDuplicateCategories = (insurances) => {
+  let insuranceCategories = insurances.map((insurance) => {
+    return insurance.category;
+  });
+
+  insuranceCategories = insuranceCategories.filter((value, index, self) => {
+    return self.indexOf(value) === index;
+  });
+
+  return insuranceCategories;
+};
+
 export default function Home({ insurances }) {
+  const categoryButtons = removeDuplicateCategories(insurances);
   return (
     <>
       <Head>
@@ -18,6 +31,13 @@ export default function Home({ insurances }) {
         <meta name="Vörður tryggingar" content="tryggingar" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="buttonContainer">
+        {categoryButtons.map((category) => (
+          <button key={category} className="btn categoryBtn">
+            {category}
+          </button>
+        ))}
+      </div>
       {insurances.map((insurance) => (
         <Card insurance={insurance}>
           <div key={insurance.type}>
