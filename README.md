@@ -13,6 +13,7 @@ then run the frontend development server:
 
 ```bash
 cd frontend/insurancesweb
+npm install
 npm run dev
 ```
 
