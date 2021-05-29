@@ -23,7 +23,7 @@ namespace Vordur.Functions
             insuranceService.CreateBlobIfNotExisting();
             var data = await insuranceService.GetAllInsurances();
             var insurances = JsonConvert.DeserializeObject<List<Insurance>>(data);
-            return new OkObjectResult(data);
+            return new OkObjectResult(insurances);
 
             // TODO: Store secrets as env variables
         }

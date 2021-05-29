@@ -33,7 +33,7 @@ namespace backend
             if (CloudStorageAccount.TryParse(storageConnectionString, out storageAccount))
             {
                 CloudBlobClient cloudBlobClient = storageAccount.CreateCloudBlobClient();
-                if (!await BlobExistsOnCloud(cloudBlobClient, "insurances-container", "/TXC5RzMKj6e1ZXPyeD9Z2G3XYEg8DnmKUttQJZdk7TakhdCjGiIBN8B41pYZDxP6fea+ZRtrymtSWBa2PObOA=="))
+                if (await BlobExistsOnCloud(cloudBlobClient, "insurances-container", "/TXC5RzMKj6e1ZXPyeD9Z2G3XYEg8DnmKUttQJZdk7TakhdCjGiIBN8B41pYZDxP6fea+ZRtrymtSWBa2PObOA=="))
                 {
                     var uri = new Uri(url);
 
@@ -47,7 +47,8 @@ namespace backend
                     BlobClient blobClient = new BlobClient(
                         connectionString: connectionString, 
                         blobContainerName: "insurances-container", 
-                        blobName: "insurances.json");
+                        blobName: "insurances.json"
+                    );
                     
                     blobClient.Upload(filePath);
                 }
