@@ -21,6 +21,7 @@ This is a demo application for Vörður. The frontend is a [Next.js](https://nex
 To make sure the installation was successful run:
 
 `$ node -v`
+
 `$ npm -v`
 
 **3.** Install the [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#install-the-azure-functions-core-tools).
