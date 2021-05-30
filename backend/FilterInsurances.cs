@@ -39,10 +39,6 @@ namespace Vordur.Functions
                 }
             }
 
-            // if (filteredInsurances.Count == 0)
-            // {
-            //     return new OkObjectResult());
-            // }
             return new OkObjectResult(filteredInsurances);
         }
     }
