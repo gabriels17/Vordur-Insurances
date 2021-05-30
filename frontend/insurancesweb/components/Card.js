@@ -4,13 +4,16 @@ import styles from '../styles/Card.module.css';
 const Card = ({ insurance }) => {
   return (
     <div className={styles.card}>
-      <Image
-        className={styles.img}
-        src={'/' + insurance.image}
-        alt={insurance.type}
-        width={640}
-        height={279}
-      ></Image>
+      <div style={{ position: 'relative' }}>
+        <Image
+          className={styles.img}
+          src={'/' + insurance.image}
+          alt={insurance.type}
+          layout="responsive"
+          width={800}
+          height={500}
+        ></Image>
+      </div>
       <div className={styles.cardContent}>
         <button className="btn">{insurance.category}</button>
         <h3>{insurance.type}</h3>
