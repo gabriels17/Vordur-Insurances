@@ -27,7 +27,7 @@ To make sure the installation was successful run:
 
 ### Running the application
 
-After cloning the repository and installing the required tools you can run the backend. No further configuration is needed since it all comes with cloning the repository! If you are using Visual Studio Code you can simply go to Run > Start Debugging (F5). If you prefer to use the command line you can also run [`func start`]. The backend will run on [http://localhost:7071](http://localhost:7071).
+After cloning the repository and installing the required tools you can run the backend. No further configuration is needed since it all comes with cloning the repository! If you are using Visual Studio Code you can simply go to Run > Start Debugging (F5). If you prefer to use the command line you can also run `func start`. The backend will run on [http://localhost:7071](http://localhost:7071).
 
 Open another terminal window in the project root, navigate to the frontend folder and run the frontend development server:
 
