@@ -2,16 +2,12 @@ import Head from 'next/head';
 import Card from '../components/Card';
 import Link from 'next/link';
 import Router from 'next/router';
+import { getInsurances } from '../services/InsuranceService';
 
 export const getStaticProps = async () => {
-  const res = await fetch(
-    'https://vordurinsurances.azurewebsites.net/api/getallinsurances'
-  );
-  const data = await res.json();
-
   return {
     props: {
-      insurances: data
+      insurances: await getInsurances()
     }
   };
 };

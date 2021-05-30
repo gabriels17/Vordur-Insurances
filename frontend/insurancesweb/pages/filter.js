@@ -1,15 +1,13 @@
 import Card from '../components/Card';
+import { filterInsurances } from '../services/InsuranceService';
 
 export const getServerSideProps = async (context) => {
   const filter = context.query.category;
-  const res = await fetch(
-    'https://vordurinsurances.azurewebsites.net/api/filterinsurances?category=' +
-      encodeURI(filter)
-  );
-  const data = await res.json();
 
   return {
-    props: { insurances: data }
+    props: {
+      insurances: await filterInsurances(filter)
+    }
   };
 };
 
