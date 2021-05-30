@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import Card from '../components/Card';
 import Link from 'next/link';
-import Router from 'next/router';
-import { getInsurances } from '../services/InsuranceService';
+import { useRouter } from 'next/router';
+import {
+  getInsurances,
+  removeDuplicateCategories
+} from '../services/InsuranceService';
 
 export const getStaticProps = async () => {
   return {
@@ -12,20 +15,9 @@ export const getStaticProps = async () => {
   };
 };
 
-const removeDuplicateCategories = (insurances) => {
-  let insuranceCategories = insurances.map((insurance) => {
-    return insurance.category;
-  });
-
-  insuranceCategories = insuranceCategories.filter((value, index, self) => {
-    return self.indexOf(value) === index;
-  });
-
-  return insuranceCategories;
-};
-
 export default function Home({ insurances }) {
   const categoryButtons = removeDuplicateCategories(insurances);
+  const router = useRouter();
 
   return (
     <>
@@ -39,7 +31,7 @@ export default function Home({ insurances }) {
         <button
           key="all-categories"
           className="btn categoryBtn"
-          onClick={() => Router.reload()}
+          onClick={() => router.push('/')}
         >
           Allar tegundir
         </button>
