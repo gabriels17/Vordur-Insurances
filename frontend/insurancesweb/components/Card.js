@@ -4,12 +4,11 @@ import styles from '../styles/Card.module.css';
 const Card = ({ insurance }) => {
   return (
     <div className={styles.card}>
-      <div style={{ position: 'relative' }}>
+      <div className={styles.cardImage}>
         <Image
           className={styles.img}
           src={'/' + insurance.image}
           alt={insurance.type}
-          layout="responsive"
           width={800}
           height={500}
         ></Image>

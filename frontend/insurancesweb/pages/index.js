@@ -56,13 +56,15 @@ export default function Home({ insurances }) {
           </Link>
         ))}
       </div>
-      {insurances.map((insurance) => (
-        <Card key={insurance.type} insurance={insurance}>
-          <div>
-            <h3>{insurance.type}</h3>
-          </div>
-        </Card>
-      ))}
+      <div>
+        {insurances.map((insurance) => (
+          <Card key={insurance.type} insurance={insurance}>
+            <div>
+              <h3>{insurance.type}</h3>
+            </div>
+          </Card>
+        ))}
+      </div>
     </>
   );
 }
