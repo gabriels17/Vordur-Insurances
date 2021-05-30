@@ -1,6 +1,6 @@
 # Vörður Insurances
 
-This is a demo application for Vörður that displays insurances. The frontend is a [Next.js](https://nextjs.org/) application bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and the backend is a [.NET Core](https://dotnet.microsoft.com/) API powered by [Azure Functions](https://azure.microsoft.com/en-us/services/functions/).
+This is a demo application for Vörður that displays insurances. The frontend is a [Next.js](https://nextjs.org/) application bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and the backend is a [.NET Core](https://dotnet.microsoft.com/) API powered by [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). You can visit the site using the link in the about section of the repository or follow the setup guide below to test it on your own machine.
 
 * [Setup](#setup)
 * [Documentation](#documentation)
