@@ -21,11 +21,6 @@ export default function Home({ insurances }) {
 
   return (
     <>
-      <Head>
-        <title>Vörður tryggingar</title>
-        <meta name="Vörður tryggingar" content="tryggingar" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <h3 className="heading">Sía eftir flokkum</h3>
       <div className="buttonContainer">
         <button
