@@ -4,7 +4,9 @@ import Link from 'next/link';
 import Router from 'next/router';
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:7071/api/GetAllInsurances');
+  const res = await fetch(
+    'https://vordurinsurances.azurewebsites.net/api/getallinsurances'
+  );
   const data = await res.json();
 
   return {
@@ -50,9 +52,7 @@ export default function Home({ insurances }) {
             key={category}
             href={'/filter?category=' + category.toLowerCase()}
           >
-            <button className="btn categoryBtn" /*onClick={handleClick}*/>
-              {category}
-            </button>
+            <button className="btn categoryBtn">{category}</button>
           </Link>
         ))}
       </div>
