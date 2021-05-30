@@ -1,15 +1,35 @@
-This is a [Next.js](https://nextjs.org/) frontend bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and a backend powered by [Azure Functions](https://azure.microsoft.com/en-us/services/functions/).
+# Vörður Insurances
 
-## Getting Started
+This is a demo application for Vörður. The frontend is a [Next.js](https://nextjs.org/) application bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and the backend is a [.NET Core](https://dotnet.microsoft.com/) API powered by [Azure Functions](https://azure.microsoft.com/en-us/services/functions/).
 
-First, open a terminal of your choice and navigate to the location of the cloned repository.
-Run the backend server with
+* [Setup](#setup)
+* [Documentation](#documentation)
+* [Learn More](#learn-more)
 
-```bash
-TODO
-```
+## Setup
 
-then run the frontend development server:
+### Prerequisites
+
+**1.** Clone the repository. Open your favourite terminal and clone the repository to a directory on your local machine with SSH or HTTPS.
+
+`$ git clone git@github.com:gabriels17/Vordur-Insurances.git`
+
+`$ git clone https://github.com/gabriels17/Vordur-Insurances.git`
+
+**2.** Install [Node.js](https://nodejs.org/en/) and make sure [npm](https://www.npmjs.com/) comes with the installation.
+
+To make sure the installation was successful run:
+
+`$ node -v`
+`$ npm -v`
+
+**3.** Install the [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#install-the-azure-functions-core-tools).
+
+### Running the application
+
+After cloning the repository and installing the required tools you can run the backend. No further configuration is needed since it all comes with cloning the repository! If you are using Visual Studio Code you can simply go to Run > Start Debugging (F5). If you prefer to use the command line you can also run [`func start`]. The backend will run on [http://localhost:7071](http://localhost:7071).
+
+Open another terminal window in the project root, navigate to the frontend folder and run the frontend development server:
 
 ```bash
 cd frontend/insurancesweb
@@ -19,17 +39,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-API routes - The API currently supports the following routes:
+## Documentation
 
-```bash
-GET /api/GetAllInsurances
-```
-
-A API testing tool is required to test the endpoints, we recommend [Postman](https://www.postman.com/downloads/) for testing purposes. To make things even simpler you can use the already prepared [Postman collection](https://www.getpostman.com/collections/89b2d6f34822e2f1eee1) to test all the requests!
-
-<!-- [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages. -->
+Although the API routes can easily be accessed by a browser we recommend using an API testing tool such as [Postman](https://www.postman.com/downloads/). To make things even simpler you can use the already prepared [Postman collection documentation](https://documenter.getpostman.com/view/6487412/TzXzEHng) to test all the currently supported API routes!
 
 ## Learn More
 
@@ -39,9 +51,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-<!-- ## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
